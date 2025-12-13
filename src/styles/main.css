@@ -330,3 +330,69 @@ body {
   
   .section-title { font-size: 2rem; }
 }
+
+/* =========================================
+   9. ENCUESTA
+   ========================================= */
+
+.poll-section { padding: 4rem 0; background: white; }
+
+.poll-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 3rem 2rem;
+  border-radius: var(--radius);
+  border: 1px solid #bae6fd;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.1);
+}
+
+.poll-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+
+.btn-poll {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-main);
+  font-weight: 600;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+
+.btn-poll.yes { background: var(--primary); color: white; box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3); }
+.btn-poll.yes:hover { transform: translateY(-3px); background: #0284c7; }
+
+.btn-poll.no { background: white; color: var(--gray); border: 1px solid #cbd5e1; }
+.btn-poll.no:hover { transform: translateY(-3px); background: #f1f5f9; border-color: var(--gray); }
+
+.poll-thanks h3 { color: var(--secondary); font-size: 1.8rem; margin-bottom: 0.5rem; }
+
+/* Estilos para el Input de Nombre */
+.input-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.poll-input {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #bae6fd;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 300px;
+  outline: none;
+  font-family: var(--font-main);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.poll-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+}
+
+/* Ajuste para mensaje de error */
+#poll-error { font-weight: 600; }

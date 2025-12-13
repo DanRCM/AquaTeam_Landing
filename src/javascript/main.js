@@ -1,4 +1,5 @@
 // main.js
+import { saveVote } from './firebase.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -56,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if(hamburger) {
     hamburger.addEventListener('click', () => {
       // Toggle simple para mostrar menú en movil
-      // Nota: Necesitarías CSS extra para estilizar esto en móvil (position absolute, etc)
       // Por ahora un alert simple como placeholder o una clase 'active'
       const isActive = navLinks.style.display === 'flex';
       
@@ -74,5 +74,58 @@ document.addEventListener('DOMContentLoaded', () => {
          navLinks.style.display = ''; // Revertir a CSS original
       }
     });
+  }
+
+// 4. LÓGICA DE ENCUESTA FIREBASE
+  const btnYes = document.getElementById('btn-yes');
+  const btnNo = document.getElementById('btn-no');
+  const userNameInput = document.getElementById('user-name');
+  
+  const pollForm = document.getElementById('poll-form');
+  const pollLoading = document.getElementById('poll-loading');
+  const pollThanks = document.getElementById('poll-thanks');
+  const pollError = document.getElementById('poll-error');
+  const thanksNameSpan = document.getElementById('thanks-name');
+
+  const handleVote = async (decision) => {
+    // 1. Validar nombre (Opcional, pero recomendado)
+    const userName = userNameInput.value.trim() || "Anónimo";
+
+    // 2. UI de Carga
+    pollForm.style.display = 'none'; // Ocultamos formulario
+    pollLoading.style.display = 'block'; // Mostramos "Guardando..."
+    pollError.style.display = 'none';
+
+    console.log("Intentando guardar voto:", decision, "Usuario:", userName); // Para debug
+
+    // 3. Intentar guardar
+    const success = await saveVote(decision, userName);
+
+    // 4. Ocultar carga
+    pollLoading.style.display = 'none';
+
+    if (success) {
+      console.log("¡Voto guardado con éxito!");
+      // Personalizar mensaje
+      if(userName !== "Anónimo") {
+        thanksNameSpan.textContent = userName;
+      }
+      // Mostrar gracias
+      pollThanks.style.display = 'block';
+      setTimeout(() => {
+        pollThanks.classList.remove('hidden-element');
+        pollThanks.classList.add('show-element');
+      }, 10);
+    } else {
+      console.error("Falló el guardado en Firebase.");
+      // Mostrar error y volver a mostrar formulario
+      pollError.style.display = 'block';
+      pollForm.style.display = 'block'; // Devolvemos el form para que intente de nuevo
+    }
+  };
+
+  if(btnYes && btnNo) {
+    btnYes.addEventListener('click', () => handleVote('SI'));
+    btnNo.addEventListener('click', () => handleVote('NO'));
   }
 });
