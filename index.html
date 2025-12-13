@@ -1,235 +1,243 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEOVIDA | Libertad para Explorar</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
 
-    <nav class="navbar">
-      <div class="container nav-container">
-        <div class="logo">NEOVIDA<span class="dot">.</span></div>
-        <ul class="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#problema">El Reto</a></li>
-          <li><a href="#how-it-works">Funcionamiento</a></li>
-          <li><a href="#specs">Tecnología</a></li>
-          <li><a href="#poll-section" class="btn-nav">Pre-ordenar</a></li>
-        </ul>
-        <div class="hamburger">☰</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEOVIDA | Libertad para Explorar</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">NEOVIDA<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#problema">El Reto</a></li>
+        <li><a href="#how-it-works">Funcionamiento</a></li>
+        <li><a href="#specs">Tecnología</a></li>
+        <li><a href="#poll-section" class="btn-nav">Pre-ordenar</a></li>
+      </ul>
+      <div class="hamburger">☰</div>
+    </div>
+  </nav>
+
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <span class="badge fade-in-up">Filtrado Físico + Purificación UV-C</span>
+      <h1 class="hero-title fade-in-up" style="--delay: 100ms">Explora más lejos.<br>Carga menos peso.</h1>
+      <p class="hero-text fade-in-up" style="--delay: 200ms">La botella definitiva para exploradores. Bebe directamente
+        de ríos y lagunas con la seguridad de eliminar sedimentos, virus y bacterias en solo 60 segundos.</p>
+      <div class="cta-group fade-in-up" style="--delay: 300ms">
+        <a href="#poll-section" class="btn-primary" style="text-decoration: none;">Quiero mi NEOVIDA</a>
+        <a href="#how-it-works" class="link-secondary">Ver cómo funciona ▶</a>
       </div>
-    </nav>
+    </div>
 
-    <section id="inicio" class="hero">
-      <div class="hero-content">
-        <span class="badge fade-in-up">Filtrado Físico + Purificación UV-C</span>
-        <h1 class="hero-title fade-in-up" style="--delay: 100ms">Explora más lejos.<br>Carga menos peso.</h1>
-        <p class="hero-text fade-in-up" style="--delay: 200ms">La botella definitiva para exploradores. Bebe directamente de ríos y lagunas con la seguridad de eliminar sedimentos, virus y bacterias en solo 60 segundos.</p>
-        <div class="cta-group fade-in-up" style="--delay: 300ms">
-          <button class="btn-primary">Quiero mi NEOVIDA</button>
-          <a href="#how-it-works" class="link-secondary">Ver cómo funciona ▶</a>
-        </div>
+    <div class="hero-visual fade-in-up" style="--delay: 400ms">
+      <div class="glowing-circle"></div>
+      <img src="src/assets/Termo_Purificador.png" alt="Botella NEOVIDA" class="bottle-img floating-anim">
+    </div>
+  </section>
+
+  <section id="problema" class="problem-section">
+    <div class="container">
+      <div class="section-header text-center" data-animate>
+        <span class="subtitle">La realidad del Outdoor</span>
+        <h2 class="section-title">¿Por qué cambiar tu forma de beber?</h2>
       </div>
-      
-      <div class="hero-visual fade-in-up" style="--delay: 400ms">
-        <div class="glowing-circle"></div>
-        <img src="src/assets/Termo_Purificador.png" 
-             alt="Botella NEOVIDA" class="bottle-img floating-anim">
-      </div>
-    </section>
 
-    <section id="problema" class="problem-section">
-      <div class="container">
-        <div class="section-header text-center" data-animate>
-          <span class="subtitle">La realidad del Outdoor</span>
-          <h2 class="section-title">¿Por qué cambiar tu forma de beber?</h2>
+      <div class="comparison-grid">
+        <div class="comparison-card bad" data-animate>
+          <h3>🚫 La Vieja Escuela</h3>
+          <ul>
+            <li>Cargar galones pesados de agua.</li>
+            <li>Hervir agua (pérdida de tiempo y gas).</li>
+            <li>Pastillas de cloro con mal sabor.</li>
+            <li>Generar basura plástica en la montaña.</li>
+          </ul>
         </div>
-
-        <div class="comparison-grid">
-          <div class="comparison-card bad" data-animate>
-            <h3>🚫 La Vieja Escuela</h3>
-            <ul>
-              <li>Cargar galones pesados de agua.</li>
-              <li>Hervir agua (pérdida de tiempo y gas).</li>
-              <li>Pastillas de cloro con mal sabor.</li>
-              <li>Generar basura plástica en la montaña.</li>
-            </ul>
-          </div>
-          <div class="comparison-card good" data-animate style="--delay: 200ms">
-            <h3>✅ La Experiencia NEOVIDA</h3>
-            <ul>
-              <li>Mochila ligera: Solo llevas tu botella.</li>
-              <li>Agua segura en 1 minuto sin fuego.</li>
-              <li>Sabor fresco y cristalino.</li>
-              <li>Cero residuos plásticos (Eco-Friendly).</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="eco-section">
-      <div class="container">
-        <div class="section-header text-center" data-animate>
-          <span class="subtitle">Sostenibilidad Real</span>
-          <h2 class="section-title">Bebe sin dejar huella</h2>
-        </div>
-
-        <div class="eco-grid-container">
-          <div class="eco-card text-center" data-animate>
-            <div class="stat-number">300+</div>
-            <h3>Botellas Ahorradas</h3>
-            <p>Una sola NEOVIDA reemplaza el consumo anual de botellas plásticas desechables de una persona.</p>
-          </div>
-          
-          <div class="eco-visual-center" data-animate style="--delay: 200ms">
-             <div class="pulse-circle"></div>
-             <span class="giant-icon">🌿</span>
-          </div>
-          
-          <div class="eco-card text-center" data-animate style="--delay: 400ms">
-            <div class="stat-number">0%</div>
-            <h3>Residuos Tóxicos</h3>
-            <p>Sin BPA. Filtros de carbón compostables y acero inoxidable de grado médico reciclable.</p>
-          </div>
-        </div>
-
-        <div class="eco-statement text-center" data-animate style="--delay: 600ms">
-          <p>"Proteger los senderos que recorremos es parte de la aventura."</p>
+        <div class="comparison-card good" data-animate style="--delay: 200ms">
+          <h3>✅ La Experiencia NEOVIDA</h3>
+          <ul>
+            <li>Mochila ligera: Solo llevas tu botella.</li>
+            <li>Agua segura en 1 minuto sin fuego.</li>
+            <li>Sabor fresco y cristalino.</li>
+            <li>Cero residuos plásticos (Eco-Friendly).</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="how-it-works" class="steps-section">
-      <div class="container">
-        <div class="section-header text-center" data-animate>
-          <h2 class="section-title">Agua potable en 3 pasos</h2>
-          <p class="section-subtitle">Diseñada para usarse en movimiento, sin detener tu aventura.</p>
+  <section class="eco-section">
+    <div class="container">
+      <div class="section-header text-center" data-animate>
+        <span class="subtitle">Sostenibilidad Real</span>
+        <h2 class="section-title">Bebe sin dejar huella</h2>
+      </div>
+
+      <div class="eco-grid-container">
+        <div class="eco-card text-center" data-animate>
+          <div class="stat-number">300+</div>
+          <h3>Botellas Ahorradas</h3>
+          <p>Una sola NEOVIDA reemplaza el consumo anual de botellas plásticas desechables de una persona.</p>
         </div>
-        
-        <div class="steps-grid">
-          <div class="step-card" data-animate>
-            <div class="step-number">01</div>
-            <h3>Recoge</h3>
-            <p>Sumerge tu NEOVIDA en la fuente. El <strong>pre-filtro físico</strong> retiene sedimentos y tierra al instante.</p>
-          </div>
-          <div class="step-card highlight" data-animate style="--delay: 150ms">
-            <div class="step-number">02</div>
-            <h3>Purifica</h3>
-            <p>Enciende la tapa. Durante <strong>60 segundos</strong>, la luz UV-C rompe el ADN de virus y bacterias.</p>
-          </div>
-          <div class="step-card" data-animate style="--delay: 300ms">
-            <div class="step-number">03</div>
-            <h3>Disfruta</h3>
-            <p>Listo. Sin esperar a que hierva, sin químicos. Agua fresca y 100% segura.</p>
-          </div>
+
+        <div class="eco-visual-center" data-animate style="--delay: 200ms">
+          <div class="pulse-circle"></div>
+          <span class="giant-icon">🌿</span>
+        </div>
+
+        <div class="eco-card text-center" data-animate style="--delay: 400ms">
+          <div class="stat-number">0%</div>
+          <h3>Residuos Tóxicos</h3>
+          <p>Sin BPA. Filtros de carbón compostables y acero inoxidable de grado médico reciclable.</p>
         </div>
       </div>
-    </section>
 
-    <section class="use-cases-section">
-      <div class="container">
-        <div class="section-header text-center" data-animate>
-          <h2 class="section-title white-title">Tu compañera de ruta</h2>
+      <div class="eco-statement text-center" data-animate style="--delay: 600ms">
+        <p>"Proteger los senderos que recorremos es parte de la aventura."</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="steps-section">
+    <div class="container">
+      <div class="section-header text-center" data-animate>
+        <h2 class="section-title">Agua potable en 3 pasos</h2>
+        <p class="section-subtitle">Diseñada para usarse en movimiento, sin detener tu aventura.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card" data-animate>
+          <div class="step-number">01</div>
+          <h3>Recoge</h3>
+          <p>Sumerge tu NEOVIDA en la fuente. El <strong>pre-filtro físico</strong> retiene sedimentos y tierra al
+            instante.</p>
         </div>
-        
-        <div class="cases-grid">
-          <div class="case-item" data-animate>
-            <span class="case-icon">🥾</span>
-            <h3>Hikers & Trekking</h3>
-            <p>Reduce drásticamente el peso de tu mochila.</p>
-          </div>
-          <div class="case-item" data-animate style="--delay: 150ms">
-            <span class="case-icon">⛺</span>
-            <h3>Camping</h3>
-            <p>Cocina y bebe con el agua del entorno.</p>
-          </div>
-          <div class="case-item" data-animate style="--delay: 300ms">
-            <span class="case-icon">🌍</span>
-            <h3>Viajeros</h3>
-            <p>Seguridad en países con agua de grifo dudosa.</p>
-          </div>
+        <div class="step-card highlight" data-animate style="--delay: 150ms">
+          <div class="step-number">02</div>
+          <h3>Purifica</h3>
+          <p>Enciende la tapa. Durante <strong>60 segundos</strong>, la luz UV-C rompe el ADN de virus y bacterias.</p>
+        </div>
+        <div class="step-card" data-animate style="--delay: 300ms">
+          <div class="step-number">03</div>
+          <h3>Disfruta</h3>
+          <p>Listo. Sin esperar a que hierva, sin químicos. Agua fresca y 100% segura.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="specs" class="specs-section">
-      <div class="container">
-        <div class="feature-split">
-          <div class="feature-image" data-animate>
-            <img src="src/assets/Termo_Purificador.png" 
-                 alt="Tecnología NEOVIDA" class="rounded-img">
-          </div>
-          <div class="feature-text" data-animate>
-            <span class="subtitle">Ingeniería de Supervivencia</span>
-            <h2>Protección de Grado Militar</h2>
-            <p>NEOVIDA no es solo una botella, es un sistema de purificación portátil compacto.</p>
-            
-            <div class="tech-specs-list">
-              <div class="tech-item">
-                <h4>🛡️ Filtrado Físico</h4>
-                <p>Membrana que atrapa sedimentos, microplásticos y turbidez visible.</p>
-              </div>
-              <div class="tech-item">
-                <h4>⚡ Purificación UV-C</h4>
-                <p>Longitud de onda de 280nm que elimina el 99.9% de bacterias.</p>
-              </div>
-              <div class="tech-item">
-                <h4>🔋 Batería de Larga Duración</h4>
-                <p>Hasta 40 ciclos de purificación con una sola carga USB-C.</p>
-              </div>
+  <section class="use-cases-section">
+    <div class="container">
+      <div class="section-header text-center" data-animate>
+        <h2 class="section-title white-title">Tu compañera de ruta</h2>
+      </div>
+
+      <div class="cases-grid">
+        <div class="case-item" data-animate>
+          <span class="case-icon">🥾</span>
+          <h3>Hikers & Trekking</h3>
+          <p>Reduce drásticamente el peso de tu mochila.</p>
+        </div>
+        <div class="case-item" data-animate style="--delay: 150ms">
+          <span class="case-icon">⛺</span>
+          <h3>Camping</h3>
+          <p>Cocina y bebe con el agua del entorno.</p>
+        </div>
+        <div class="case-item" data-animate style="--delay: 300ms">
+          <span class="case-icon">🌍</span>
+          <h3>Viajeros</h3>
+          <p>Seguridad en países con agua de grifo dudosa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="specs" class="specs-section">
+    <div class="container">
+      <div class="feature-split">
+        <div class="feature-image" data-animate>
+          <img src="src/assets/Termo_Purificador.png" alt="Tecnología NEOVIDA" class="rounded-img">
+        </div>
+        <div class="feature-text" data-animate>
+          <span class="subtitle">Ingeniería de Supervivencia</span>
+          <h2>Protección de Grado Militar</h2>
+          <p>NEOVIDA no es solo una botella, es un sistema de purificación portátil compacto.</p>
+
+          <div class="tech-specs-list">
+            <div class="tech-item">
+              <h4>🛡️ Filtrado Físico</h4>
+              <p>Membrana que atrapa sedimentos, microplásticos y turbidez visible.</p>
+            </div>
+            <div class="tech-item">
+              <h4>⚡ Purificación UV-C</h4>
+              <p>Longitud de onda de 280nm que elimina el 99.9% de bacterias.</p>
+            </div>
+            <div class="tech-item">
+              <h4>🔋 Batería de Larga Duración</h4>
+              <p>Hasta 40 ciclos de purificación con una sola carga USB-C.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="poll-section" class="poll-section">
-      <div class="container text-center">
-        <div class="poll-card" data-animate>
-          <h2 class="section-title" style="font-size: 2rem;">¿Te gustaría tener una NEOVIDA?</h2>
-          <p style="margin-bottom: 2rem; color: var(--gray);">Ayúdanos a hacer realidad este proyecto.</p>
-          
-          <div id="poll-form">
-            <div class="input-group">
-              <input type="text" id="user-name" placeholder="Tu nombre" class="poll-input">
-            </div>
+  <section id="poll-section" class="poll-section">
+    <div class="container text-center">
+      <div class="poll-card" data-animate>
+        <h2 class="section-title" style="font-size: 2rem;">¿Te gustaría tener una NEOVIDA?</h2>
+        <p style="margin-bottom: 2rem; color: var(--gray);">Ayúdanos a hacer realidad este proyecto.</p>
 
-            <div class="poll-buttons" id="poll-options">
-              <button class="btn-poll yes" id="btn-yes">
-                <span class="emoji">👍</span> Sí, la compraría
-              </button>
-              <button class="btn-poll no" id="btn-no">
-                <span class="emoji">🤔</span> Quizás / No
-              </button>
-            </div>
+        <div id="poll-form">
+          <div class="input-group">
+            <input type="text" id="user-name" placeholder="Tu nombre (Opcional)" class="poll-input">
           </div>
 
-          <div id="poll-loading" class="hidden-element" style="display: none; color: var(--primary); margin-top: 1rem;">
-            Guardando tu respuesta... ⏳
+          <div id="reason-container" class="input-group hidden-element" style="display: none;">
+            <input type="text" id="user-reason" placeholder="¿Qué nos faltó para convencerte?" class="poll-input"
+              style="border-color: #cbd5e1;">
           </div>
 
-          <div id="poll-thanks" class="poll-thanks hidden-element" style="display: none;">
-            <h3>¡Gracias, <span id="thanks-name">viajero</span>! 💙</h3>
-            <p>Hemos registrado tu interés en NEOVIDA.</p>
-          </div>
-          
-          <div id="poll-error" class="hidden-element" style="display: none; color: #ef4444; margin-top: 1rem;">
-             No se pudo guardar. Revisa tu conexión.
+          <div class="poll-buttons" id="poll-options">
+            <button class="btn-poll yes" id="btn-yes">
+              <span class="emoji">👍</span> Sí, la compraría
+            </button>
+            <button class="btn-poll no" id="btn-no">
+              <span class="emoji">🤔</span> Quizás / No
+            </button>
           </div>
         </div>
-      </div>
-    </section>
 
-    <footer class="footer">
-      <div class="container copyright text-center">
-        © 2025 NEOVIDA Project. Ecuador.
-      </div>
-    </footer>
+        <div id="poll-loading" class="hidden-element" style="display: none; color: var(--primary); margin-top: 1rem;">
+          Guardando tu respuesta... ⏳
+        </div>
 
-    <script type="module" src="/src/javascript/main.js"></script>
-  </body>
+        <div id="poll-thanks" class="poll-thanks hidden-element" style="display: none;">
+          <h3>¡Gracias, <span id="thanks-name">viajero</span>! 💙</h3>
+          <p>Hemos registrado tu interés en NEOVIDA.</p>
+        </div>
+
+        <div id="poll-error" class="hidden-element" style="display: none; color: #ef4444; margin-top: 1rem;">
+          No se pudo guardar. Revisa tu conexión.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container copyright text-center">
+      © 2025 NEOVIDA Project. Ecuador.
+    </div>
+  </footer>
+
+  <script type="module" src="/src/javascript/main.js"></script>
+</body>
+
 </html>

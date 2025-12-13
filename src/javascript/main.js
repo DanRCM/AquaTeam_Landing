@@ -76,10 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-// 4. LÓGICA DE ENCUESTA FIREBASE
+// 4. LÓGICA DE ENCUESTA FIREBASE (ACTUALIZADA)
   const btnYes = document.getElementById('btn-yes');
   const btnNo = document.getElementById('btn-no');
   const userNameInput = document.getElementById('user-name');
+  const userReasonInput = document.getElementById('user-reason'); // Nuevo
+  const reasonContainer = document.getElementById('reason-container'); // Nuevo container
   
   const pollForm = document.getElementById('poll-form');
   const pollLoading = document.getElementById('poll-loading');
@@ -87,40 +89,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const pollError = document.getElementById('poll-error');
   const thanksNameSpan = document.getElementById('thanks-name');
 
-  const handleVote = async (decision) => {
-    // 1. Validar nombre (Opcional, pero recomendado)
-    const userName = userNameInput.value.trim() || "Anónimo";
+  // Estado para saber si ya pedimos la razón
+  let askingReason = false;
 
-    // 2. UI de Carga
-    pollForm.style.display = 'none'; // Ocultamos formulario
-    pollLoading.style.display = 'block'; // Mostramos "Guardando..."
+  const handleVote = async (decision) => {
+    const userName = userNameInput.value.trim() || "Anónimo";
+    const userReason = userReasonInput.value.trim();
+
+    // LÓGICA ESPECIAL PARA EL "NO"
+    if (decision === 'NO' && !askingReason) {
+      // 1. Si es la primera vez que pulsa NO, mostramos el input
+      askingReason = true;
+      
+      // Ocultamos botón SI para limpiar la interfaz
+      btnYes.style.display = 'none';
+      
+      // Mostramos el input de razón con animación simple
+      reasonContainer.style.display = 'flex';
+      reasonContainer.classList.remove('hidden-element');
+      reasonContainer.classList.add('show-element');
+      
+      // Cambiamos texto del botón NO
+      btnNo.innerHTML = 'Enviar Opinión 📩';
+      
+      // Enfocamos el input para que escriban
+      userReasonInput.focus();
+      return; // DETENEMOS AQUÍ para esperar que escriban y vuelvan a pulsar
+    }
+
+    // SI LLEGAMOS AQUÍ ES PORQUE:
+    // A) Votaron SI
+    // B) Votaron NO y ya escribieron su razón (o lo dejaron vacío y pulsaron enviar)
+
+    // UI de Carga
+    pollForm.style.display = 'none';
+    pollLoading.style.display = 'block';
     pollError.style.display = 'none';
 
-    console.log("Intentando guardar voto:", decision, "Usuario:", userName); // Para debug
+    // Guardar en Firebase (pasamos la razón)
+    const success = await saveVote(decision, userName, userReason);
 
-    // 3. Intentar guardar
-    const success = await saveVote(decision, userName);
-
-    // 4. Ocultar carga
     pollLoading.style.display = 'none';
 
     if (success) {
-      console.log("¡Voto guardado con éxito!");
-      // Personalizar mensaje
-      if(userName !== "Anónimo") {
-        thanksNameSpan.textContent = userName;
-      }
-      // Mostrar gracias
+      if(userName !== "Anónimo") thanksNameSpan.textContent = userName;
+      
       pollThanks.style.display = 'block';
       setTimeout(() => {
         pollThanks.classList.remove('hidden-element');
         pollThanks.classList.add('show-element');
       }, 10);
     } else {
-      console.error("Falló el guardado en Firebase.");
-      // Mostrar error y volver a mostrar formulario
       pollError.style.display = 'block';
-      pollForm.style.display = 'block'; // Devolvemos el form para que intente de nuevo
+      pollForm.style.display = 'block';
     }
   };
 

@@ -14,19 +14,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Función exportable actualizada
-export const saveVote = async (voteValue, userName) => {
+// Función exportable
+// Actualizamos para recibir 'reason'
+export const saveVote = async (voteValue, userName, reason = "") => {
   try {
     await addDoc(collection(db, "encuesta_compra"), {
-      nombre: userName,      // Guardamos el nombre
-      interesado: voteValue, // "SI" o "NO"
+      nombre: userName || "Anónimo",
+      interesado: voteValue,
+      motivo_rechazo: reason, // Guardamos la razón (estará vacía si votan SI)
       fecha: new Date(),
       dispositivo: navigator.userAgent
     });
     return true;
   } catch (e) {
-    // Este log es vital para saber POR QUÉ falla
-    console.error("Error CRÍTICO guardando voto en Firebase: ", e);
+    console.error("Error guardando voto: ", e);
     return false;
   }
 };
